@@ -1,10 +1,10 @@
-import { CapacitorConfig } from '@capacitor/cli';
+import {CapacitorConfig} from '@capacitor/cli';
 
 const config: CapacitorConfig = {
-  appId: 'io.ionic.starter',
-  appName: 'kit-map-pwa',
-  webDir: 'build',
-  bundledWebRuntime: false
+    appId: 'de.foxat.campus',
+    appName: 'KIT Campusplan',
+    webDir: 'build',
+    bundledWebRuntime: false
 };
 
 export default config;

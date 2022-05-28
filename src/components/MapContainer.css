@@ -1,0 +1,5 @@
+#map {
+    margin-top: var(--ion-safe-area-top);
+    width: 100%;
+    height: 100%;
+}
