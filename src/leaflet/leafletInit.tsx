@@ -1,13 +1,11 @@
-import L, { Map } from "leaflet";
+import L from "leaflet";
 import "leaflet-edgebuffer";
 
-declare global {
-    // noinspection JSUnusedGlobalSymbols
-    interface Window { map: Map }
-}
+import "../gloalDeclarations";
 
 declare global {
     namespace L {
+        // noinspection JSUnusedGlobalSymbols
         interface TileLayerOptions {
             edgeBufferTiles?: number
         }
@@ -30,5 +28,16 @@ L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
 L.control.attribution({
     position: "topright"
 }).addTo(window.map);
+
+window.map.on('preclick', () => {
+    if (window.selectedLeafletElement) {
+        window.selectedLeafletElement.setStyle({
+            color: 'green',
+            fillColor: 'green'
+        })
+    }
+
+    window.setPopupContentState(<p className="container">Wähle ein Gebäude aus...</p>)
+});
 
 document.getElementById('map')?.classList.add("initialized");

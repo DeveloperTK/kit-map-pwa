@@ -26,3 +26,7 @@ yarn-error.log*
 
 # Optional eslint cache
 .eslintcache
+
+# Exclude all but the current dataset
+map-dataset-*.json
+!map-dataset-current.json

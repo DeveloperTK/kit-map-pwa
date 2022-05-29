@@ -4,12 +4,9 @@ import { Map } from 'leaflet';
 import 'leaflet/dist/leaflet.css';
 import './MapContainer.css';
 
-const MapContext = createContext<Map | null>(null);
+import "../gloalDeclarations";
 
-declare global {
-    // noinspection JSUnusedGlobalSymbols
-    interface Window { map: Map }
-}
+const MapContext = createContext<Map | null>(null);
 
 const MapContainer: React.FC = ({ children }) => {
     let value: Map | null = null;
@@ -35,7 +32,7 @@ function init() {
     if (!document.getElementById('map')?.classList.contains("dispatched")) {
         document.getElementById('map')?.classList.add("dispatched");
 
-        import('../leafletInit');
+        import('../leaflet/leafletInit');
     }
 }
 
